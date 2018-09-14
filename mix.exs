@@ -32,8 +32,8 @@ defmodule Guardian.DB.Mixfile do
   defp deps do
     [
       {:guardian, "~> 1.0"},
-      {:ecto, "~> 2.2"},
-      {:postgrex, "~> 0.13", optional: true},
+      {:ecto, git: "https://github.com/elixir-ecto/ecto.git"},
+      {:postgrex, "~> 0.14.0-dev", optional: true, github: "elixir-ecto/postgrex", ref: "6cabc3b"},
       {:ex_doc, ">= 0.0.0", only: :dev, runtime: false},
       {:credo, ">= 0.0.0", only: [:dev, :test], runtime: false}
     ]

@@ -9,6 +9,7 @@ defmodule Mix.Tasks.Guardian.Db.Gen.Migration do
   import Mix.Ecto
   import Mix.Generator
   alias Guardian.DB.Token
+  alias Ecto.Migrator
 
   @doc false
   def run(args) do
@@ -18,7 +19,7 @@ defmodule Mix.Tasks.Guardian.Db.Gen.Migration do
 
     Enum.each(repos, fn repo ->
       ensure_repo(repo, args)
-      path = migrations_path(repo)
+      path = Migrator.migrations_path(repo)
 
       source_path =
         :guardian_db
